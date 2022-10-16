@@ -19,8 +19,19 @@ def jinja():
         "Nazim": 30,
         "Kashem": 28,
         "Konstantin": 26,
-        "Ahmed": 27
+        "Ahmed": 28
     }
+
+    colours = ("Red", "Green")
+
+    class GitRemote:
+        def __init__(self, name, description, url):
+            self.name = name
+            self.description = description
+            self.url = url
+
+        def pull
+
     return render_template("/public/jinja.html", my_name=my_name)
 
 @app.route("/about")
