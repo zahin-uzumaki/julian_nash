@@ -1,0 +1,39 @@
+python3 -m venv env
+source venv/bin/activate
+pip install flask flask-sqlalchemy flask-wtf
+pip freeze > requirements.txt
+
+To install all the required external libraries when running the flask application
+on a different computer
+pip install -r requirements.txt
+
+flask run
+	FLASK_APP=app.py (by default the script will look for app.py, server.py)
+	FLASK_ENV=production (by default the mode will be in production)
+	
+	(These values are taken from environment variable)
+	
+	
+How to change in LINUX
+export FLASK_APP=hello.py
+export FLASK_ENV=development
+
+flask --app hello --debug run
+
+
+#############GIT############
+git init : Intialize git
+git is wathcing for every changes
+
+git status - Shows all the file that has not been added or ignored
+
+git add filename - Adds the specified file
+git add . : Adds all file that has not been added
+
+git commit -m "First Commit" - Saves the changes to the file only to the local repository and not the remote repository
+
+git push - pushes the file to the repository
+
+unstaging a file:
+git remote add origin 
+
