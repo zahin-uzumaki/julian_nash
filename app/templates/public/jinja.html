@@ -10,11 +10,97 @@
             <h1>Jinja templates</h1>
             <hr>
 
-            <h4>Variables</h4>
+            <h1>Variables</h1>
             <hr>
             <p>
-                <h6>Name: {{ my_name }}</h6>
+                <h4>Name: {{ my_name }}</h4>
             </p>
+            <h1>Looping</h1>
+            <hr>
+            <ul>
+                {% for lang in langs %} 
+                <li><h4>{{ lang }}</h4></li>
+                {% endfor %}
+            </ul>
+
+            <h1>Looping with index</h1>
+            <hr>
+            <ul>
+                {% for lang in langs %} 
+                <li> <h4>{{ loop.index }}: {{ lang }}</h4></li>
+                {% endfor %}
+            </ul>
+
+            <h1>Looping a dict</h1>
+            <hr>
+            <ul>
+                {% for friend, age in friends.items() %} 
+                <li><h4>{{ friend }}: {{ age }}</h4></li>
+                {% endfor %}
+            </ul>
+
+            <h1>Access list member</h1>
+            <hr>
+            <p><h4>{{ langs[0] }}</h4></p>
+
+            <h1>Access dict member</h1>
+            <hr>
+            <p><h4>{{ friends["Konstantin"] }}</h4></p>
+
+            <h1>Unpack variables</h1>
+            <hr>
+            {% set a, b = colours %} 
+            <p><h4>{{ a }}</h4></p>
+            <p><h4>{{ b }}</h4></p>
+
+            <h1>Call a function</h1>
+            <hr>
+            <p><h4>{{ repeat("Flask is awesome. ", 10) }} </h4></p>
+
+<!-- Conditionals -->
+            <h1>Conditionals</h1>
+            <hr>
+            {% if cool %} 
+            <!-- Cool is is printed using HTML -->
+                <p><h4>Cool is {{ cool }}</h4></p> 
+            {% endif %}
+
+            <h1>Comparisons</h1>
+            <hr>
+            <h4>
+                {% if age < 18 %}
+                <p> No entry </p>
+                {% elif age > 80 %} 
+                    <p>Sorry. Too old </p>
+                {% else %}
+                    <p>You may enter</p>
+                {% endif %}
+            </h4>
+
+
+            <h1>Math</h4>
+            <hr>
+            <h4><p>{{ age/2 }}</p></h4>
+
+            <!-- Look up filters in Jinja -->
+            <h1>Template filters</h1>
+            <hr> 
+            <p>{{ langs|length }}</p>
+            <p>{{ friends|length }}</p>
+            <p>{{ my_name|reverse }}</p>
+            <p>{{ langs|upper }}</p>
+            <p>{{ langs|join(", ") }}</p>
+
+            <h1>Custom filters</h1>
+            <hr> 
+            <p>{{ langs|length }}</p>
+            <p>{{ friends|length }}</p>
+            <p>{{ my_name|reverse }}</p>
+            <p>{{ langs|upper }}</p>
+            <p>{{ langs|join(", ") }}</p>
+            <p>{{ my_remote.name }}</p>
+
+
 
         </div>
     </div>
